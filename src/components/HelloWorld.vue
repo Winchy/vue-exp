@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+      <router-link to="/about">About</router-link> |
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -10,6 +11,7 @@
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript" target="_blank" rel="noopener">typescript</a></li>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha" target="_blank" rel="noopener">unit-mocha</a></li>
     </ul>
     <h3>Essential Links</h3>
     <ul>
@@ -31,16 +33,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import Vue from "vue";
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
+export default Vue.extend({
+  name: "HelloWorld",
+  props: {
+    msg: String,
+  },
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
 }

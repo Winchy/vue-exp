@@ -6,13 +6,16 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true,
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "mocha",
+      "chai"
     ],
     "paths": {
       "@/*": [
@@ -30,6 +33,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "src/**/*.js",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
