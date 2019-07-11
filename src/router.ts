@@ -30,8 +30,8 @@ export default new Router({
           path: "ab2",
           name: "about2",
           component: () => import("./components/Aout2.vue"),
-        }
-      ]
+        },
+      ],
     },
   ],
 });

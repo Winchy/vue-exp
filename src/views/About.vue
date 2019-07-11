@@ -13,6 +13,31 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 export default Vue.extend({
+  data() {
+    return {
+      a: 1,
+    };
+  },
+  beforeCreate() {
+    // console.log("beforeCreate");
+  },
+  created() {
+    // console.log("created", this.a);
+  },
+  beforeMount() {
+    // console.log("beforeMount");
+  },
+  mounted() {
+    // console.log("mounted");
+  },
+  beforeRouteEnter(to, from, next) {
+    // console.log("beforeRouteEnter", to, from);
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    // console.log("beforeRouteLeave", to, from);
+    next();
+  },
 });
 </script>
 

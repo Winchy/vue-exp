@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <aside class="aside">
-      <h1 class="aside__header">教育大脑</h1>
+      <h1 class="aside__header">教育大脑{{count}}</h1>
       <div class="menu-selector">
         <button v-for="(menu, menuId) in menus" :key="menu.text" @click.prevent="showMenu(menuId)">{{menu.text}}</button>
       </div>
@@ -19,6 +19,8 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapState } from "vuex";
+
 import menus from "@/configs/main_menus";
 import MainMenu from "@/components/MainMenu.vue";
 
@@ -29,12 +31,20 @@ export default Vue.extend({
       currentMenu: 0,
     };
   },
+  computed: {
+    ...mapState("schools", {
+      count: ({count}): number => {
+        return count;
+      },
+    }),
+  },
   components: {
     MainMenu,
   },
   methods: {
     showMenu(menuId: number) {
       this.currentMenu = menuId;
+      this.$store.commit("schools/increment", {amount: 10}, {  });
     },
   },
 });
