@@ -1,4 +1,3 @@
-import createLogger from 'vuex/dist/logger';
 
 const state = {
     count: 10,
@@ -32,11 +31,6 @@ const mutations = {
     }
 };
 
-const myPlugin = (store: any) => {
-    store.subscribe((mutation: any, state: any) => {
-        console.log(mutation.type, state.count);
-    });
-};
 
 export default {
     debug: true,
@@ -45,5 +39,4 @@ export default {
     getters,
     actions,
     mutations,
-    plugins: [createLogger(), myPlugin]
 };
