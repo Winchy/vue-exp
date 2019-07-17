@@ -10,8 +10,8 @@
       </div>
     </aside>
     <div id="content">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about/">Home</router-link> |
+      <router-link to="/about/ab2">About</router-link>
     </div>
     <router-view/>
   </div>
